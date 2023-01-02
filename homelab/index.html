@@ -13,7 +13,7 @@
     
     
       
-        <title>Backup - Home Assistant</title>
+        <title>configuration of my linux docker system - Home Assistant</title>
       
     
     
@@ -59,7 +59,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#backup" class="md-skip">
+        <a href="#configuration-of-my-linux-docker-system" class="md-skip">
           Skip to content
         </a>
       
@@ -92,7 +92,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Backup
+              configuration of my linux docker system
             
           </span>
         </div>
@@ -191,6 +191,21 @@
 
   
   
+  
+    <li class="md-nav__item">
+      <a href="../homeassistant/" class="md-nav__link">
+        Homeassistant
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
     
   
   
@@ -202,62 +217,25 @@
         
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Backup
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
-        Backup
+        configuration of my linux docker system
       </a>
       
-        
+    </li>
+  
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
     
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
-        <li class="md-nav__item">
-  <a href="#making-a-backup-from-the-ui" class="md-nav__link">
-    MAKING A BACKUP FROM THE UI
-  </a>
-  
-</li>
       
-        <li class="md-nav__item">
-  <a href="#restoring-a-backup-on-a-new-install" class="md-nav__link">
-    RESTORING A BACKUP ON A NEW INSTALL
-  </a>
-  
-</li>
       
-        <li class="md-nav__item">
-  <a href="#copy-to-another-distant-location" class="md-nav__link">
-    Copy to another distant location
-  </a>
+
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#create-a-manual-back-up" class="md-nav__link">
-    create a manual back-up
-  </a>
   
-</li>
-      
-    </ul>
   
-</nav>
-      
+    <li class="md-nav__item">
+      <a href="../network/" class="md-nav__link">
+        Network
+      </a>
     </li>
   
 
@@ -282,42 +260,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#making-a-backup-from-the-ui" class="md-nav__link">
-    MAKING A BACKUP FROM THE UI
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#restoring-a-backup-on-a-new-install" class="md-nav__link">
-    RESTORING A BACKUP ON A NEW INSTALL
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#copy-to-another-distant-location" class="md-nav__link">
-    Copy to another distant location
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#create-a-manual-back-up" class="md-nav__link">
-    create a manual back-up
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -330,89 +272,18 @@
                 
 
 
-<h1 id="backup">Backup</h1>
-<p>Once the installation of HASSio is done, must put in place backup system. </p>
-<p>Back up and restore Home Assistant</p>
-<p>Backup of your Home Assistant and add-on data and configuration. They are stored in a compressed archive file (.tar). Backups are made from the Supervisor Backups panel. There is also a service available that allows you to trigger the creation of a backup from an automation. Backups are stored in the /backup directory.
-A full backup includes the following directories:
-- config
-- share
-- addons (only manually installed or created add-ons, not those installed from the store)
-- ssl
-- media
-A partial backup consists of any number of the above default directories and installed add-ons.</p>
-<h3 id="making-a-backup-from-the-ui">MAKING A BACKUP FROM THE UI</h3>
-<ol>
-<li>Go to Configuration &gt; Add-ons &amp; Backups &gt; Backups in the UI.</li>
-<li>Provide a name for the backup.</li>
-<li>Choose full or partial.</li>
-<li>Choose to password protect or not. Password-protected backups cannot easily be browsed outside of Home Assistant OS.</li>
-<li>Click “Create” to begin the backup.</li>
-</ol>
-<h3 id="restoring-a-backup-on-a-new-install">RESTORING A BACKUP ON A NEW INSTALL</h3>
-<p>You can make use of backup which you have copied off of a previous install to restore to a new installation during the onboarding process. Follow the link at the bottom of the account creation page to upload your backup from the previous installation.
-For restoring a backup at any other time, visit the Supervisor backup panel in your UI and use the following steps:
-- Select “Upload Backup” from the icon in the upper right of the page.
-- Click on the folder icon to navigate to your backup .tar file and select it.
-When the upload is completed, you will be presented with the backup restore dialog for restoring it, and can then choose to restore in full or in part by manually selecting individual items.
-If the backup you are uploading is more than 1GB in size, it can be faster and more efficient to make use of the Samba add-on in order to transfer files to the /backup directory.
-The length of time it takes to create or restore backup will depend on how much you have to compress or decompress.
-If you’re looking to slim down your backup, check if your configuration directory contains a large database file (home-assistant_v2.db). See the recorder integration page for options to keep your database data down to a size that won’t cause issues. Note the keep days, purge interval, and include/exclude options.
-When the restore is complete, Home Assistant will restart to apply the new settings. You will lose the connection to the UI and it will return once the restart is completed.
---&gt; Can also use the CLI commande to do so. </p>
-<h3 id="copy-to-another-distant-location">Copy to another distant location</h3>
-<p>Copy the back to Sysnology NAS via SMB share. Very easy to do. 
-https://github.com/thomasmauerer/hassio-addons/tree/master/samba-backup</p>
-<p>The end of this video shows how to add a back up entity on the Home assistant dashboard: https://www.youtube.com/watch?v=bY39OpoN8OM&amp;t=956s</p>
-<pre><code>Configuration that worked:
-host: 192.168.0.20
-share: Sauvegarde_distante
-target_dir: /HomeAssistant
-username: admin
-password: Jrlsd09fpj
-keep_local: 0
-keep_remote: 2
-trigger_time: '00:00'
-trigger_days:
-- Mon
-- Tue
-- Wed
-- Thu
-- Fri
-- Sat
-- Sun
-exclude_addons: []
-exclude_folders: []
-</code></pre>
-<pre><code>Logs:
-[s6-init] making user provided files available at /var/run/s6/etc...exited 0.
-[s6-init] ensuring user provided files have correct perms...exited 0.
-[fix-attrs.d] applying ownership &amp; permissions fixes...
-[fix-attrs.d] done.
-[cont-init.d] executing container initialization scripts...
-[cont-init.d] done.
-[services.d] starting services
-[services.d] done.
-[22-03-14 18:15:43] INFO: ---------------------------------------------------
-[22-03-14 18:15:43] INFO: Host/Share: 192.168.0.20/Sauvegarde_distante
-[22-03-14 18:15:43] INFO: Target directory: /HomeAssistant
-[22-03-14 18:15:43] INFO: Keep local/remote: 0/2
-[22-03-14 18:15:43] INFO: Trigger time: 18:20
-[22-03-14 18:15:43] INFO: Trigger days: Mon Tue Wed Thu Fri Sat Sun
-[22-03-14 18:15:43] INFO: ---------------------------------------------------
-[22-03-14 18:15:46] INFO: Samba Backup started successfully
-[22-03-14 18:20:46] INFO: Backup running ...
-[22-03-14 18:20:46] INFO: Creating backup &quot;Samba Backup 2022-03-14 18:20&quot;
-[22-03-14 18:20:48] INFO: Copying backup d4aec165 (Samba_Backup_2022_03_14_18_20.tar) to share
-[22-03-14 18:20:49] INFO: Deleting d4aec165 (Samba Backup 2022-03-14 18:20) local
-[22-03-14 18:21:02] INFO: Backup finished
-</code></pre>
-<h3 id="create-a-manual-back-up">create a manual back-up</h3>
-<p>We need to create a script and execute it. </p>
-<p>service: hassio.addon_stdin
-data:
-addon: 15d21743_samba_backup
-input: trigger</p>
+<h1 id="configuration-of-my-linux-docker-system">configuration of my linux docker system</h1>
+<ul>
+<li>needs keyboard in french</li>
+<li>apt update</li>
+<li>create an account that can do root stuff always</li>
+<li>install ssh</li>
+<li>install docker</li>
+<li>git to manage configuration file of linux <a href="https://www.coderholic.com/using-git-and-github-to-sync-config-files/">Link</a></li>
+<li>.bashrc</li>
+<li>any other file</li>
+<li>visudo</li>
+</ul>
 
               
             </article>
@@ -426,7 +297,7 @@ input: trigger</p>
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href=".." class="md-footer__link md-footer__link--prev" aria-label="Previous: Home Assistant" rel="prev">
+        <a href="../homeassistant/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Homeassistant" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -435,11 +306,26 @@ input: trigger</p>
               <span class="md-footer__direction">
                 Previous
               </span>
-              Home Assistant
+              Homeassistant
             </div>
           </div>
         </a>
       
+      
+        
+        <a href="../network/" class="md-footer__link md-footer__link--next" aria-label="Next: Network" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Network
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
       
     </nav>
   
