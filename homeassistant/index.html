@@ -365,7 +365,7 @@
 <li>ROOM_DEVICES_POSITON-IN-THE-ROOM</li>
 </ul>
 <h1 id="duckdns-and-portforward">Duckdns and portforward</h1>
-<p>Follow this video to get duck DNS and port forward installation. This article is also usefull for port fowarding on USG : https://www.appuntidallarete.com/ubiquiti-unifi-usg-udm-port-forwarding-configuration-and-troubleshooting/</p>
+<p>Follow this video to get duck DNS and port forward installation. This article is also usefull for port fowarding on USG : <a href="https://www.appuntidallarete.com/ubiquiti-unifi-usg-udm-port-forwarding-configuration-and-troubleshooting/">link</a></p>
 <p><img alt="portforwad" src="../images/portforward1.PNG" />
 <img alt="portforwad" src="../images/portforward2.PNG" />
 <img alt="portforwad" src="../images/portforward3.PNG" /></p>
@@ -373,20 +373,21 @@
 <ul>
 <li>double stack combine NVR and face recognition</li>
 <li>deepstack for recognition</li>
-<li>frigate for NVR</li>
-<li>https://youtu.be/_61-hIL1AjQ</li>
+<li>frigate for NVR <a href="https://youtu.be/_61-hIL1AjQ">link</a></li>
 </ul>
 <h1 id="backup">Backup</h1>
 <p>Once the installation of HASSio is done, must put in place backup system. </p>
 <p>Back up and restore Home Assistant</p>
 <p>Backup of your Home Assistant and add-on data and configuration. They are stored in a compressed archive file (.tar). Backups are made from the Supervisor Backups panel. There is also a service available that allows you to trigger the creation of a backup from an automation. Backups are stored in the /backup directory.
-A full backup includes the following directories:
-- config
-- share
-- addons (only manually installed or created add-ons, not those installed from the store)
-- ssl
-- media
-A partial backup consists of any number of the above default directories and installed add-ons.</p>
+A full backup includes the following directories:</p>
+<ul>
+<li>config</li>
+<li>share</li>
+<li>addons (only manually installed or created add-ons, not those installed from the store)</li>
+<li>ssl</li>
+<li>media</li>
+</ul>
+<p>A partial backup consists of any number of the above default directories and installed add-ons.</p>
 <h2 id="backup-from-the-ui">Backup from the UI</h2>
 <ol>
 <li>Go to Configuration &gt; Add-ons &amp; Backups &gt; Backups in the UI.</li>
@@ -397,19 +398,21 @@ A partial backup consists of any number of the above default directories and ins
 </ol>
 <h2 id="restoring-backup-after-new-install">Restoring backup after new install</h2>
 <p>You can make use of backup which you have copied off of a previous install to restore to a new installation during the onboarding process. Follow the link at the bottom of the account creation page to upload your backup from the previous installation.
-For restoring a backup at any other time, visit the Supervisor backup panel in your UI and use the following steps:
-- Select “Upload Backup” from the icon in the upper right of the page.
-- Click on the folder icon to navigate to your backup .tar file and select it.
-When the upload is completed, you will be presented with the backup restore dialog for restoring it, and can then choose to restore in full or in part by manually selecting individual items.
-If the backup you are uploading is more than 1GB in size, it can be faster and more efficient to make use of the Samba add-on in order to transfer files to the /backup directory.
-The length of time it takes to create or restore backup will depend on how much you have to compress or decompress.
-If you’re looking to slim down your backup, check if your configuration directory contains a large database file (home-assistant_v2.db). See the recorder integration page for options to keep your database data down to a size that won’t cause issues. Note the keep days, purge interval, and include/exclude options.
-When the restore is complete, Home Assistant will restart to apply the new settings. You will lose the connection to the UI and it will return once the restart is completed.
---&gt; Can also use the CLI commande to do so. </p>
+For restoring a backup at any other time, visit the Supervisor backup panel in your UI and use the following steps:</p>
+<ul>
+<li>Select “Upload Backup” from the icon in the upper right of the page.</li>
+<li>Click on the folder icon to navigate to your backup .tar file and select it.</li>
+<li>When the upload is completed, you will be presented with the backup restore dialog for restoring it, and can then choose to restore in full or in part by manually selecting individual items.</li>
+<li>If the backup you are uploading is more than 1GB in size, it can be faster and more efficient to make use of the Samba add-on in order to transfer files to the /backup directory.</li>
+<li>The length of time it takes to create or restore backup will depend on how much you have to compress or decompress.</li>
+<li>If you’re looking to slim down your backup, check if your configuration directory contains a large database file (home-assistant_v2.db). See the recorder integration page for options to keep your database data down to a size that won’t cause issues. Note the keep days, purge interval, and include/exclude options.</li>
+<li>When the restore is complete, Home Assistant will restart to apply the new settings. You will lose the connection to the UI and it will return once the restart is completed.</li>
+<li>Can also use the CLI commande to do so. </li>
+</ul>
 <h2 id="copy-to-another-distant-location">Copy to another distant location</h2>
 <p>Copy the back to Sysnology NAS via SMB share. Very easy to do. 
-https://github.com/thomasmauerer/hassio-addons/tree/master/samba-backup</p>
-<p>The end of this video shows how to add a back up entity on the Home assistant dashboard: https://www.youtube.com/watch?v=bY39OpoN8OM&amp;t=956s</p>
+<a href="https://github.com/thomasmauerer/hassio-addons/tree/master/samba-backup">Link</a></p>
+<p>The end of this video shows how to add a back up entity on the Home assistant dashboard: <a href="https://www.youtube.com/watch?v=bY39OpoN8OM&amp;t=956s">Link</a></p>
 <pre><code>Configuration that worked:
 host: 192.168.0.20
 share: Sauvegarde_distante
@@ -461,8 +464,8 @@ addon: 15d21743_samba_backup
 input: trigger</p>
 <p><img alt="New script" src="../images/backupscript.PNG" /></p>
 <h2 id="hacs-home-assistant-community-store">HACS Home Assistant Community Store</h2>
-<p>https://hacs.xyz/ 
-This is a library of github repositories for bakend integration and front end view (themes.... ). I found usefull :
+<p><a href="https://hacs.xyz/">Link</a>
+This is a library of github repositories for bakend integration and front end view (themes....). I found usefull :
 Front end : </p>
 <ul>
 <li>Tracking Number Card for Home Assistant</li>
@@ -481,19 +484,21 @@ Front end : </p>
 <p><img alt="ZHA1" src="../images/zha1.PNG" /></p>
 <p>Once clicked on Configure there is a step to automatically install the dongle. This is a successful install : </p>
 <p><img alt="ZHA2" src="../images/zha2.PNG" /></p>
-<p>https://sonoff.tech/product-review/sonoff-zigbee-3-0-usb-dongle-plus-tutorials/ give us the next step to add devices.</p>
+<p><a href="https://sonoff.tech/product-review/sonoff-zigbee-3-0-usb-dongle-plus-tutorials/">Link</a> give us the next step to add devices.</p>
 <p>Add sub-devices to the gateway dongle</p>
 <p><img alt="ZHA3" src="../images/zha3.png" />
 <img alt="ZHA4" src="../images/zha4.png" /></p>
 <p>Make the sub-devices enter the pairing mode, and you can control it after adding successfully</p>
 <p><img alt="ZHA5" src="../images/zha5.png" /></p>
 <h2 id="mirror">Mirror</h2>
-<p>https://youtu.be/RM3Xvo08t10
-https://magicmirror.builders/
-https://docs.magicmirror.builders/getting-started/installation.html#manual-installation </p>
+<ul>
+<li><a href="https://youtu.be/RM3Xvo08t10">Link1</a></li>
+<li><a href="https://magicmirror.builders/">Link2</a></li>
+<li><a href="https://docs.magicmirror.builders/getting-started/installation.html#manual-installation">Link3</a></li>
+</ul>
 <p>Automatic Installation Scripts
-Sam (@sdetweil, long time contributor of the MagicMirror² framework) maintains a easy to use installation and update script: https://github.com/sdetweil/MagicMirror_scripts
-The MagicMirror Package Manager is a command line interface designed to simplify the installation, removal, and maintenance of MagicMirror modules</p>
+Sam (@sdetweil, long time contributor of the MagicMirror² framework) maintains a easy to use installation and update script: <a href="https://github.com/sdetweil/MagicMirror_scripts">Link</a></p>
+<p>The MagicMirror Package Manager is a command line interface designed to simplify the installation, removal, and maintenance of MagicMirror modules</p>
 <h2 id="my-feedback-and-questions">My feedback and questions:</h2>
 <ul>
 <li>je ne comprends pas comment imbriquer les briques d'automation les unes aux autres.</li>
