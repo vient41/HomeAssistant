@@ -385,6 +385,15 @@ Test every month and requires an automation on home assistant. <a href="https://
 <li>deepstack for recognition</li>
 <li>frigate for NVR <a href="https://youtu.be/_61-hIL1AjQ">link</a></li>
 </ul>
+<h2 id="hikvision-integration">Hikvision integration</h2>
+<p>After few tries with Frigate I reliazed that the motion detection as well as the stream were not as good as expected. So I moved to hikvision integration for testing where I've been able to stream an image at 15fps (not confirmed, said by the tool) and able to get motion detection made by Annke camera embedded software and an entity on HA to detect the motion. </p>
+<ol>
+<li>configure Annke camera event <img alt="camera1" src="../images/annke1.PNG" /></li>
+<li>configure Annke camera system <img alt="camera2" src="../images/annke2.PNG" /></li>
+<li>on HA, install Hikvision integration modifying the config.yaml file <img alt="camera3" src="../images/annke3.PNG" /></li>
+<li>restart HA and the camera should be visible as an entity. </li>
+<li>to create an automation, this was working <img alt="camera4" src="../images/annke4.PNG" /> <img alt="camera5" src="../images/annke5.PNG" /> <img alt="camera6" src="../images/annke6.PNG" /></li>
+</ol>
 <h1 id="backup">Backup</h1>
 <p>Once the installation of HASSio is done, must put in place backup system. </p>
 <p>Back up and restore Home Assistant</p>
