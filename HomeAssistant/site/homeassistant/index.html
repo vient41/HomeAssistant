@@ -1,0 +1,606 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.2.16">
+    
+    
+      
+        <title>Home Assistant - Home Lab Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.1c3799f8.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.cc9b2e1e.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,300i,400,400i,700,700i%7CIBM+Plex+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"IBM Plex Sans";--md-code-font:"IBM Plex Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="pink" data-md-color-accent="blue">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#home-assistant" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Home Lab Documentation" class="md-header__button md-logo" aria-label="Home Lab Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Home Lab Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Home Assistant
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="slate" data-md-color-primary="pink" data-md-color-accent="blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Home Lab Documentation" class="md-nav__button md-logo" aria-label="Home Lab Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Home Lab Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Home Assistant
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Home Assistant
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#entity-naming-convention" class="md-nav__link">
+    Entity naming convention
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../homelab/" class="md-nav__link">
+        Home Lab
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../network/" class="md-nav__link">
+        Network
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../featurehassio/" class="md-nav__link">
+        Feature Test
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#entity-naming-convention" class="md-nav__link">
+    Entity naming convention
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="home-assistant">Home Assistant</h1>
+<h2 id="entity-naming-convention">Entity naming convention</h2>
+<ul>
+<li>ROOM_DEVICES_POSITON-IN-THE-ROOM</li>
+</ul>
+<h1 id="duckdns-and-portforward">Duckdns and portforward</h1>
+<p>Follow this video to get duck DNS and port forward installation. This article is also usefull for port fowarding on USG : <a href="https://www.appuntidallarete.com/ubiquiti-unifi-usg-udm-port-forwarding-configuration-and-troubleshooting/">link</a></p>
+<p><img alt="portforwad" src="../images/portforward1.PNG" />
+<img alt="portforwad" src="../images/portforward2.PNG" />
+<img alt="portforwad" src="../images/portforward3.PNG" /></p>
+<h1 id="smoke-and-co-detectors">Smoke and CO detectors</h1>
+<p>Model fireangel SB1 optical smoke alarm.  </p>
+<p>Test : press 5 second the test button and it will bip 2 times.
+When biping for alarm smoke presence, press test for 5 second, it will silence the alarm for 8 min. <a href="https://www.google.com/url?sa=t&amp;source=web&amp;rct=j&amp;url=https://www.safelincs.co.uk/templates_safelincs/files/datasheets/3659_FireAngel%2520FASB1R%2520User%2520Manual.pdf&amp;ved=2ahUKEwiIs5-nhJ_9AhXUhFwKHf43AX0QFnoECB8QAQ&amp;usg=AOvVaw3HvTiUHkAaTbzhFzzZUQTF">Manual</a></p>
+<p>CO detector model fireangel FA3313.</p>
+<p>There is a possibility to deactivate it with a small spin a keep stored in the office draw. 
+To test, push the button test, it will ignite bips (2 times after I tested it). 
+CO light is red when alarm detected high CO value.
+The exclamation point means battery low and the puls wave is the heartbeat if working and blink green. 
+Test every month and requires an automation on home assistant. <a href="https://www.google.com/amp/s/manuals.plus/fireangle/fa3313-carbon-monoxide-alarms-manual/amp">Manual</a></p>
+<h1 id="security-cameras">Security Cameras</h1>
+<ul>
+<li>double stack combine NVR and face recognition</li>
+<li>deepstack for recognition</li>
+<li>frigate for NVR <a href="https://youtu.be/_61-hIL1AjQ">link</a></li>
+</ul>
+<h2 id="hikvision-integration">Hikvision integration</h2>
+<p>After few tries with Frigate I reliazed that the motion detection as well as the stream were not as good as expected. So I moved to hikvision integration for testing where I've been able to stream an image at 15fps (not confirmed, said by the tool) and able to get motion detection made by Annke camera embedded software and an entity on HA to detect the motion. </p>
+<ol>
+<li>configure Annke camera event <img alt="camera1" src="../images/annke1.PNG" /></li>
+<li>configure Annke camera system <img alt="camera2" src="../images/annke2.PNG" /></li>
+<li>on HA, install Hikvision integration modifying the config.yaml file <img alt="camera3" src="../images/annke3.PNG" /></li>
+<li>restart HA and the camera should be visible as an entity. </li>
+<li>to create an automation, this was working <img alt="camera4" src="../images/annke4.PNG" /> <img alt="camera5" src="../images/annke5.PNG" /> <img alt="camera6" src="../images/annke6.PNG" /></li>
+</ol>
+<h1 id="backup">Backup</h1>
+<p>Once the installation of HASSio is done, must put in place backup system. </p>
+<p>Back up and restore Home Assistant</p>
+<p>Backup of your Home Assistant and add-on data and configuration. They are stored in a compressed archive file (.tar). Backups are made from the Supervisor Backups panel. There is also a service available that allows you to trigger the creation of a backup from an automation. Backups are stored in the /backup directory.
+A full backup includes the following directories:</p>
+<ul>
+<li>config</li>
+<li>share</li>
+<li>addons (only manually installed or created add-ons, not those installed from the store)</li>
+<li>ssl</li>
+<li>media</li>
+</ul>
+<p>A partial backup consists of any number of the above default directories and installed add-ons.</p>
+<h2 id="backup-from-the-ui">Backup from the UI</h2>
+<ol>
+<li>Go to Configuration &gt; Add-ons &amp; Backups &gt; Backups in the UI.</li>
+<li>Provide a name for the backup.</li>
+<li>Choose full or partial.</li>
+<li>Choose to password protect or not. Password-protected backups cannot easily be browsed outside of Home Assistant OS.</li>
+<li>Click “Create” to begin the backup.</li>
+</ol>
+<h2 id="restoring-backup-after-new-install">Restoring backup after new install</h2>
+<p>You can make use of backup which you have copied off of a previous install to restore to a new installation during the onboarding process. Follow the link at the bottom of the account creation page to upload your backup from the previous installation.
+For restoring a backup at any other time, visit the Supervisor backup panel in your UI and use the following steps:</p>
+<ul>
+<li>Select “Upload Backup” from the icon in the upper right of the page.</li>
+<li>Click on the folder icon to navigate to your backup .tar file and select it.</li>
+<li>When the upload is completed, you will be presented with the backup restore dialog for restoring it, and can then choose to restore in full or in part by manually selecting individual items.</li>
+<li>If the backup you are uploading is more than 1GB in size, it can be faster and more efficient to make use of the Samba add-on in order to transfer files to the /backup directory.</li>
+<li>The length of time it takes to create or restore backup will depend on how much you have to compress or decompress.</li>
+<li>If you’re looking to slim down your backup, check if your configuration directory contains a large database file (home-assistant_v2.db). See the recorder integration page for options to keep your database data down to a size that won’t cause issues. Note the keep days, purge interval, and include/exclude options.</li>
+<li>When the restore is complete, Home Assistant will restart to apply the new settings. You will lose the connection to the UI and it will return once the restart is completed.</li>
+<li>Can also use the CLI commande to do so. </li>
+</ul>
+<h2 id="copy-to-another-distant-location">Copy to another distant location</h2>
+<p>Copy the back to Sysnology NAS via SMB share. Very easy to do. 
+<a href="https://github.com/thomasmauerer/hassio-addons/tree/master/samba-backup">Link</a></p>
+<p>The end of this video shows how to add a back up entity on the Home assistant dashboard: <a href="https://www.youtube.com/watch?v=bY39OpoN8OM&amp;t=956s">Link</a></p>
+<pre><code>Configuration that worked:
+host: 192.168.0.20
+share: Sauvegarde_distante
+target_dir: /HomeAssistant
+username: admin
+password: mdpnormal
+keep_local: 0
+keep_remote: 2
+trigger_time: '00:00'
+trigger_days:
+- Mon
+- Tue
+- Wed
+- Thu
+- Fri
+- Sat
+- Sun
+exclude_addons: []
+exclude_folders: []
+</code></pre>
+<pre><code>Logs:
+[s6-init] making user provided files available at /var/run/s6/etc...exited 0.
+[s6-init] ensuring user provided files have correct perms...exited 0.
+[fix-attrs.d] applying ownership &amp; permissions fixes...
+[fix-attrs.d] done.
+[cont-init.d] executing container initialization scripts...
+[cont-init.d] done.
+[services.d] starting services
+[services.d] done.
+[22-03-14 18:15:43] INFO: ---------------------------------------------------
+[22-03-14 18:15:43] INFO: Host/Share: 192.168.0.20/Sauvegarde_distante
+[22-03-14 18:15:43] INFO: Target directory: /HomeAssistant
+[22-03-14 18:15:43] INFO: Keep local/remote: 0/2
+[22-03-14 18:15:43] INFO: Trigger time: 18:20
+[22-03-14 18:15:43] INFO: Trigger days: Mon Tue Wed Thu Fri Sat Sun
+[22-03-14 18:15:43] INFO: ---------------------------------------------------
+[22-03-14 18:15:46] INFO: Samba Backup started successfully
+[22-03-14 18:20:46] INFO: Backup running ...
+[22-03-14 18:20:46] INFO: Creating backup &quot;Samba Backup 2022-03-14 18:20&quot;
+[22-03-14 18:20:48] INFO: Copying backup d4aec165 (Samba_Backup_2022_03_14_18_20.tar) to share
+[22-03-14 18:20:49] INFO: Deleting d4aec165 (Samba Backup 2022-03-14 18:20) local
+[22-03-14 18:21:02] INFO: Backup finished
+</code></pre>
+<h2 id="create-a-manual-back-up">create a manual back-up</h2>
+<p>We need to create a script and execute it. </p>
+<p>service: hassio.addon_stdin
+data:
+addon: 15d21743_samba_backup
+input: trigger</p>
+<p><img alt="New script" src="../images/backupscript.PNG" /></p>
+<h2 id="hacs-home-assistant-community-store">HACS Home Assistant Community Store</h2>
+<p><a href="https://hacs.xyz/">Link</a>
+This is a library of github repositories for bakend integration and front end view (themes....). I found usefull :
+Front end : </p>
+<ul>
+<li>Tracking Number Card for Home Assistant</li>
+<li>scheduler-card</li>
+<li>Travel Time Card for Home Assistant</li>
+</ul>
+<p>Integrations :</p>
+<ul>
+<li>Car Wash</li>
+<li>Amazon Rekognition</li>
+<li>Office 365 Integration for Home Assistant</li>
+<li>Nespresso Ble coffee machine</li>
+</ul>
+<h2 id="zigbee-home-assistant-zha">Zigbee Home Assistant (ZHA)</h2>
+<p>Plugin the Sonoff Zigbee dongle on the Home Assistant and restart the Home assistant. By doing that I have automatically discovered the dongle into Home Assistant. </p>
+<p><img alt="ZHA1" src="../images/zha1.PNG" /></p>
+<p>Once clicked on Configure there is a step to automatically install the dongle. This is a successful install : </p>
+<p><img alt="ZHA2" src="../images/zha2.PNG" /></p>
+<p><a href="https://sonoff.tech/product-review/sonoff-zigbee-3-0-usb-dongle-plus-tutorials/">Link</a> give us the next step to add devices.</p>
+<p>Add sub-devices to the gateway dongle</p>
+<p><img alt="ZHA3" src="../images/zha3.png" />
+<img alt="ZHA4" src="../images/zha4.png" /></p>
+<p>Make the sub-devices enter the pairing mode, and you can control it after adding successfully</p>
+<p><img alt="ZHA5" src="../images/zha5.png" /></p>
+<h2 id="mirror">Mirror</h2>
+<ul>
+<li><a href="https://youtu.be/RM3Xvo08t10">Link1</a></li>
+<li><a href="https://magicmirror.builders/">Link2</a></li>
+<li><a href="https://docs.magicmirror.builders/getting-started/installation.html#manual-installation">Link3</a></li>
+</ul>
+<p>Automatic Installation Scripts
+Sam (@sdetweil, long time contributor of the MagicMirror² framework) maintains a easy to use installation and update script: <a href="https://github.com/sdetweil/MagicMirror_scripts">Link</a></p>
+<p>The MagicMirror Package Manager is a command line interface designed to simplify the installation, removal, and maintenance of MagicMirror modules</p>
+<h2 id="roborock-and-xiaomi">Roborock and Xiaomi</h2>
+<p>Roboroc integration doesn't work for now and automatically ask to make use of xiaomi Miio integration instead. The roborock needs to be controlled from the Mobile application "Mi Home" instead of the Roborock application. It doesn't change anything in the interface, once logged in, the interface is exactly the same. The following integration appears once found by Xiaomi home assistant integration tool. </p>
+<p><img alt="roborock" src="../images/roborock.PNG" /></p>
+<p>I found a <a href="https://havient.duckdns.org/hacs/repository/299753146">HACS map extractor</a> to make a beautiful dashboard with the map of the vacuum. I don't feel like it is a need for now. It's called "Xiaomi Cloud Map Extractor".</p>
+<h2 id="my-feedback-and-questions">My feedback and questions:</h2>
+<ul>
+<li>je ne comprends pas comment imbriquer les briques d'automation les unes aux autres.</li>
+<li>Je veux créer des briques d'automations élémentaires pour les cascader et arriver à un modèle complexe</li>
+<li>Sous quel forme se présente ces briques élémentaire dans Home Assistant ? </li>
+<li>Node red offre-t-il un affichage "human readable" que Home assistant n'offre pas ?</li>
+<li>Est-e que HA sait déclencher des automations sur des evenements ? </li>
+<li>Fonctionement en machine d'état posible ?? </li>
+</ul>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href=".." class="md-footer__link md-footer__link--prev" aria-label="Previous: Home" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Home
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../homelab/" class="md-footer__link md-footer__link--next" aria-label="Next: Home Lab" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Home Lab
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.3a4b43e5.min.js"></script>
+      
+    
+  </body>
+</html>
