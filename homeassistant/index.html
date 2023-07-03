@@ -381,9 +381,8 @@ The exclamation point means battery low and the puls wave is the heartbeat if wo
 Test every month and requires an automation on home assistant. <a href="https://www.google.com/amp/s/manuals.plus/fireangle/fa3313-carbon-monoxide-alarms-manual/amp">Manual</a></p>
 <h1 id="security-cameras">Security Cameras</h1>
 <ul>
-<li>double stack combine NVR and face recognition</li>
+<li>double take combine NVR and face recognition</li>
 <li>deepstack for recognition</li>
-<li>frigate for NVR <a href="https://youtu.be/_61-hIL1AjQ">link</a></li>
 </ul>
 <h2 id="hikvision-integration">Hikvision integration</h2>
 <p>After few tries with Frigate I reliazed that the motion detection as well as the stream were not as good as expected. So I moved to hikvision integration for testing where I've been able to stream an image at 15fps (not confirmed, said by the tool) and able to get motion detection made by Annke camera embedded software and an entity on HA to detect the motion. </p>
@@ -393,6 +392,44 @@ Test every month and requires an automation on home assistant. <a href="https://
 <li>on HA, install Hikvision integration modifying the config.yaml file <img alt="camera3" src="../images/annke3.PNG" /></li>
 <li>restart HA and the camera should be visible as an entity. </li>
 <li>to create an automation, this was working <img alt="camera4" src="../images/annke4.PNG" /> <img alt="camera5" src="../images/annke5.PNG" /> <img alt="camera6" src="../images/annke6.PNG" /></li>
+</ol>
+<h2 id="frigate">Frigate</h2>
+<p><a href="https://youtu.be/_61-hIL1AjQ">Installation</a></p>
+<pre><code>mqtt:
+  host: 192.168.x.x
+  user: xxx
+  password: xxx
+
+cameras:
+  Driveway: # &lt;------ Name the camera
+    ffmpeg:
+      inputs:
+        - path: rtsp://xxx:mdp@192.168.x.x:554/H264/ch1/sub/av_stream # &lt;----- Update for your camera
+          roles:
+            - detect
+            - rtmp
+            - record
+    record:
+      enabled: True
+      retain:
+        days: 2
+        mode: motion
+    rtmp:
+      enabled: False # &lt;-- RTMP should be disabled if your stream is not H264
+    detect:
+      width: 640  # &lt;---- update for your camera's resolution
+      height: 480 # &lt;---- update for your camera's resolution
+      fps: 5
+</code></pre>
+<p>I needed to move to sub stream because 4K camera stream is too big for the rpi. it's does work well even with cheap camera... May not need to buy high end next time.</p>
+<h2 id="doubletake">doubletake</h2>
+<p>wip</p>
+<h2 id="doorbell">Doorbell</h2>
+<p>Model : Smart 2K+ Wired WiFi Video Doorbell with Chime</p>
+<ol>
+<li>plug the electrical cable to the doorbell</li>
+<li>plug the chime, it will automatically pair with the doorbell <a href="https://support.reolink.com/hc/en-us/articles/12704048812953-Getting-Started-with-Video-Doorbell-WiFi/">Manual</a></li>
+<li>install the mobile app to pair the doorbell with app. I will check in the futur if possible to do in home assistant without the app. </li>
 </ol>
 <h1 id="backup">Backup</h1>
 <p>Once the installation of HASSio is done, must put in place backup system. </p>
