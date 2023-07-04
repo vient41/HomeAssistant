@@ -474,26 +474,28 @@ For restoring a backup at any other time, visit the Supervisor backup panel in y
 <h2 id="copy-to-another-distant-location">Copy to another distant location</h2>
 <p>Copy the back to Sysnology NAS via SMB share. Very easy to do. 
 <a href="https://github.com/thomasmauerer/hassio-addons/tree/master/samba-backup">Link</a></p>
-<p>The end of this video shows how to add a back up entity on the Home assistant dashboard: <a href="https://www.youtube.com/watch?v=bY39OpoN8OM&amp;t=956s">Link</a></p>
-<pre><code>Configuration that worked:
-host: 192.168.0.20
+<p>The end of this video shows how to add a back up entity on the Home assistant dashboard: <a href="https://www.youtube.com/watch?v=bY39OpoN8OM&amp;t=956s">Link</a>
+Now that frigate generate video, we need to exclude /media from the backup, it's too big otherwise. </p>
+<pre><code>host: 192.168.0.20
 share: Sauvegarde_distante
 target_dir: /HomeAssistant
-username: admin
-password: mdpnormal
+username: Thomas
+password: ********
 keep_local: 0
 keep_remote: 2
-trigger_time: '00:00'
+trigger_time: &quot;00:00&quot;
 trigger_days:
-- Mon
-- Tue
-- Wed
-- Thu
-- Fri
-- Sat
-- Sun
+  - Mon
+  - Tue
+  - Wed
+  - Thu
+  - Fri
+  - Sat
+  - Sun
 exclude_addons: []
-exclude_folders: []
+exclude_folders:
+  - /media
+log_level: debug
 </code></pre>
 <pre><code>Logs:
 [s6-init] making user provided files available at /var/run/s6/etc...exited 0.
