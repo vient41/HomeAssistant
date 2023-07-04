@@ -522,6 +522,27 @@ addons (only manually installed or created add-ons, not those installed from the
 ssl
 media
 A partial backup consists of any number of the above default directories and installed add-ons.</p>
+<p>version: "3"</p>
+<h1 id="more-info-at-httpsgithubcompi-holedocker-pi-hole-and-httpsdocspi-holenet">More info at https://github.com/pi-hole/docker-pi-hole/ and https://docs.pi-hole.net/</h1>
+<p>services:
+  pihole:
+    container_name: pihole
+    image: pihole/pihole:latest
+    # For DHCP it is recommended to remove these ports and instead add: network_mode: "host"
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+      - "67:67/udp" # Only required if you are using Pi-hole as your DHCP server
+      - "80:80/tcp"
+    environment:
+      TZ: 'America/Chicago'
+      # WEBPASSWORD: 'thomas'
+    # Volumes store your data between container upgrades
+    volumes:
+      - './etc-pihole:/etc/pihole'
+      - './etc-dnsmasq.d:/etc/dnsmasq.d'
+    #   https://github.com/pi-hole/docker-pi-hole#note-on-capabilities
+    restart: unless-stopped</p>
 
               
             </article>
