@@ -524,7 +524,7 @@ media
 A partial backup consists of any number of the above default directories and installed add-ons.</p>
 <p>version: "3"</p>
 <h1 id="more-info-at-httpsgithubcompi-holedocker-pi-hole-and-httpsdocspi-holenet">More info at https://github.com/pi-hole/docker-pi-hole/ and https://docs.pi-hole.net/</h1>
-<p>services:
+<p><code>services:
   pihole:
     container_name: pihole
     image: pihole/pihole:latest
@@ -542,7 +542,7 @@ A partial backup consists of any number of the above default directories and ins
       - './etc-pihole:/etc/pihole'
       - './etc-dnsmasq.d:/etc/dnsmasq.d'
     #   https://github.com/pi-hole/docker-pi-hole#note-on-capabilities
-    restart: unless-stopped</p>
+    restart: unless-stopped</code></p>
 
               
             </article>
